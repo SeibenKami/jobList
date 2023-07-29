@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:job_list/src/screens/auth_screen/sign_up_screen.dart';
 
 void main(){
-  runApp(JobListApp());
+  runApp(const JobListApp());
 }
 
 

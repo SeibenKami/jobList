@@ -3,6 +3,10 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:job_list/src/constants/app_colors.dart';
 import 'package:job_list/src/constants/constants.dart';
+import 'package:job_list/src/screens/auth_screen/sign_in_screen.dart';
+import 'package:job_list/src/screens/auth_screen/sign_up_screen.dart';
+
+import '../../widgets/custom_button.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -28,6 +32,88 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   fit: BoxFit.cover,
                 ),
               ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 100,
+                ),
+                const Expanded(
+                  child: Text(
+                    "JobList",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                ),
+                SizedBox(height: size.height / 4),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Expanded(
+                        child: Text(
+                          "List and Find Ads with JobList",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      const Expanded(
+                        flex: 1,
+                        child: Text(
+                          "Discover jobs and list your jobs as well. Convinient ad listing platform",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      //Continue Button
+                      CustomButton(
+                        label: "Get Started",
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (ctx) => SignInScreen()));
+                        },
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      // Option to register
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            "Haven't registered?",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              // go to registration screen
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (ctx) => SignUpScreen()));
+                            },
+                            child: Text(
+                              "Register",
+                              style: TextStyle(color: AppColors.blue),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                    ],
+                  ),
+                )
+              ],
             ),
           )
         ],

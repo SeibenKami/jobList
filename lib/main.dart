@@ -1,11 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:job_list/src/screens/auth_screen/sign_up_screen.dart';
+import 'package:job_list/src/screens/onboarding_screen/onboarding_screen.dart';
 
-void main(){
+void main() {
   runApp(const JobListApp());
 }
-
 
 class JobListApp extends StatelessWidget {
   const JobListApp({super.key});
@@ -13,7 +12,7 @@ class JobListApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: SignUpScreen(),
+      home: OnboardingScreen(),
     );
   }
 }

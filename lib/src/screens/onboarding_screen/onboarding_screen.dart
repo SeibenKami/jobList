@@ -6,6 +6,7 @@ import 'package:job_list/src/constants/constants.dart';
 import 'package:job_list/src/screens/auth_screen/sign_in_screen.dart';
 import 'package:job_list/src/screens/auth_screen/sign_up_screen.dart';
 
+import '../../widgets/already_text_notice.dart';
 import '../../widgets/custom_button.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -82,30 +83,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         height: 20,
                       ),
                       // Option to register
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
-                            "Haven't registered?",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              // go to registration screen
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (ctx) => SignUpScreen()));
-                            },
-                            child: Text(
-                              "Register",
-                              style: TextStyle(color: AppColors.blue),
-                            ),
-                          ),
-                        ],
+                      AlreadyTextNotice(
+                        label: Text(
+                          "Haven't Registered?",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        secondText: "Register",
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (ctx) => SignUpScreen()));
+                        },
                       ),
                       const SizedBox(
                         height: 20,

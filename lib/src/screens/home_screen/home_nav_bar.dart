@@ -14,10 +14,10 @@ class HomeNavBar extends StatefulWidget {
 class _HomeNavBarState extends State<HomeNavBar> {
   int selected = 0;
   List<Widget> _pages = [
-    HomeScreen(),
-    FavouritesScreen(),
-    CreateAddScreen(),
-    ProfileScreen(),
+    const HomeScreen(),
+    const FavouritesScreen(),
+    const CreateAddScreen(),
+    const ProfileScreen(),
   ];
 
   onSelected(int index) {
@@ -37,7 +37,7 @@ class _HomeNavBarState extends State<HomeNavBar> {
         onTap: (value) {
           onSelected(value);
         },
-        items: [
+        items: const [
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.home,

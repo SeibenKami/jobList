@@ -35,6 +35,10 @@ class _SignInScreenState extends State<SignInScreen> {
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 20),
+          decoration: BoxDecoration(
+            image:
+                DecorationImage(image: AssetImage(greyBg), fit: BoxFit.cover),
+          ),
           child: Form(
             key: _formKey,
             child:

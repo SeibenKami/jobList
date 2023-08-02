@@ -6,6 +6,7 @@ import 'package:job_list/src/widgets/already_text_notice.dart';
 import 'package:job_list/src/widgets/custom_button.dart';
 import 'package:job_list/src/widgets/custom_textfield.dart';
 import 'package:job_list/src/widgets/google_button.dart';
+import '../../constants/constants.dart';
 import '../../widgets/or_divider.dart';
 import '../home_screen/home_nav_bar.dart';
 
@@ -33,6 +34,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 20),
+          decoration: BoxDecoration(
+            image:
+                DecorationImage(image: AssetImage(greyBg), fit: BoxFit.cover),
+          ),
           child: Form(
             key: _formKey,
             child: Column(

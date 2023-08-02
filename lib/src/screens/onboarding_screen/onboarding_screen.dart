@@ -29,6 +29,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             itemBuilder: (context, index) => Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
+                  colorFilter: ColorFilter.mode(
+                      Colors.black.withOpacity(0.2), BlendMode.hardLight),
                   image: AssetImage("$bg$index.jpg"),
                   fit: BoxFit.cover,
                 ),
@@ -53,14 +55,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Expanded(
-                        child: Text(
-                          "List and Find Ads with JobList",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold),
-                        ),
+                      Text(
+                        "List and Find Ads with JobList",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        height: 10,
                       ),
                       const Expanded(
                         flex: 1,

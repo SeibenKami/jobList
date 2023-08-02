@@ -137,7 +137,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       // If the form is valid, display a snackbar. In the real world,
                       // you'd often call a server or save the information in a database.
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Processing Data')),
+                        const SnackBar(
+                          content: Text('Processing Data'),
+                        ),
                       );
                       Navigator.pushAndRemoveUntil(
                           context,
@@ -157,7 +159,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 GoogleButton(
                   label: "Sign up with Google",
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (ctx) => HomeNavBar(),
+                        ),
+                        (route) => false);
+                  },
                 ),
                 SizedBox(
                   height: size.height / 5,

@@ -9,3 +9,4 @@ const String bg = "assets/images/";
 
 const String glogo = "assets/images/glogo.png";
 const String greyBg = "assets/images/greyBg.jpg";
+const String cardImage = "assets/images/cardImage.png";

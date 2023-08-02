@@ -166,7 +166,18 @@ class _SignInScreenState extends State<SignInScreen> {
               ),
               GoogleButton(
                 label: "Continue with Google",
-                onTap: () {},
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Logged in'),
+                      duration: Duration(seconds: 1),
+                    ),
+                  );
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(builder: (ctx) => HomeNavBar()),
+                      (route) => false);
+                },
               ),
               SizedBox(
                 height: size.height / 6,

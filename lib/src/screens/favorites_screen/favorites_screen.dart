@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:job_list/src/constants/constants.dart';
 import 'package:job_list/src/widgets/cards/ad_card.dart';
 
 import '../../constants/app_colors.dart';
@@ -12,6 +15,9 @@ class FavouritesScreen extends StatefulWidget {
 }
 
 class _FavouritesScreenState extends State<FavouritesScreen> {
+  Random random = Random();
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,38 +25,39 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
         elevation: 0,
-        title: Text(
-          "JobList",
-          style: TextStyle(
-              color: AppColors.blue,
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-              fontStyle: FontStyle.italic),
-        ),
-        actions: [
-          GestureDetector(
+        title: ListTile(
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: 2,
+          ),
+          leading: const CircleAvatar(
+            backgroundColor: Colors.grey,
+            backgroundImage: AssetImage("assets/images/0.jpg"),
+          ),
+          title: const Text(
+            "Mon, 12 May 2023",
+            style: TextStyle(color: Colors.grey, fontSize: 10),
+          ),
+          subtitle: const Text(
+            "Search, Find and Apply",
+            style: TextStyle(
+                color: Colors.black, fontSize: 14, fontWeight: FontWeight.w500),
+          ),
+          trailing: GestureDetector(
             onTap: () {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (ctx) => const NotificationScreen()));
+                context,
+                MaterialPageRoute(
+                  builder: (ctx) => const NotificationScreen(),
+                ),
+              );
             },
-            child: Icon(
+            child: const Icon(
               Icons.notifications_outlined,
-              color: AppColors.blue,
+              color: Colors.black,
+              size: 30,
             ),
           ),
-          const SizedBox(
-            width: 8,
-          ),
-          Icon(
-            Icons.email_outlined,
-            color: AppColors.blue,
-          ),
-          const SizedBox(
-            width: 8,
-          ),
-        ],
+        ),
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -73,9 +80,11 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                 children: [
                   ...List.generate(
                     6,
-                    (index) => const Padding(
+                    (index) => Padding(
                       padding: EdgeInsets.all(8.0),
-                      child: AdCard(),
+                      child: AdCard(
+                        randomColor: randColorNums[index],
+                      ),
                     ),
                   ),
                 ],

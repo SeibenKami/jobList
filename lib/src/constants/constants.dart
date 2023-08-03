@@ -10,3 +10,7 @@ const String bg = "assets/images/";
 const String glogo = "assets/images/glogo.png";
 const String greyBg = "assets/images/greyBg.jpg";
 const String cardImage = "assets/images/cardImage.png";
+
+
+//demo n=random
+List<int> randColorNums = [58, 168, 25, 74, 32, 17, 68, 185, 254];

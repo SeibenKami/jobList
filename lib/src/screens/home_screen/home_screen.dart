@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:job_list/src/constants/app_colors.dart';
 import 'package:job_list/src/constants/constants.dart';
@@ -13,6 +15,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  Random random = Random();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,9 +71,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Container(
                     width: 20,
                     height: 20,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Colors.blue,
+                      color: AppColors.blue,
                     ),
                     child: const Center(
                       child: Icon(
@@ -109,9 +112,11 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 ...List.generate(
                   8,
-                  (index) => const Padding(
+                  (index) => Padding(
                     padding: EdgeInsets.all(8.0),
-                    child: AdCard(),
+                    child: AdCard(
+                      randomColor: randColorNums[index],
+                    ),
                   ),
                 )
               ],

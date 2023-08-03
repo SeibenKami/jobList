@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:job_list/src/constants/app_colors.dart';
 import 'package:job_list/src/constants/constants.dart';
+import 'package:job_list/src/screens/auth_screen/forgot_password_screen.dart';
 import 'package:job_list/src/screens/auth_screen/sign_up_screen.dart';
 import 'package:job_list/src/screens/home_screen/home_nav_bar.dart';
 import 'package:job_list/src/widgets/google_button.dart';
@@ -129,7 +130,12 @@ class _SignInScreenState extends State<SignInScreen> {
               ),
 
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (ctx) => ResetPasswordScreen()));
+                },
                 child: Text(
                   "Forgot password",
                   style: TextStyle(color: AppColors.blue),

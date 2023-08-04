@@ -88,6 +88,7 @@ class _SignInScreenState extends State<SignInScreen> {
               ),
               // password textfield
               CustomTextField(
+                obscureText: seePass,
                 prefixIcon: Icon(
                   Icons.lock_outline,
                   color: pass != null && pass != "" || changePassColor
